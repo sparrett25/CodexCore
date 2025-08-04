@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import scrolls from "../data/scrolls.json";
 import "../styles/scrollGrove.css"; // reuse existing typography/badges
+import { glyphForTone } from "../utils/toneGlyphs";
 
 
 const TONE_COLORS = {
@@ -106,13 +107,20 @@ export default function ScrollDetail() {
   const auraStrong = hexToRgba(aura, 0.35);
   const auraSoft   = hexToRgba(aura, 0.20);
 
+  const glyph = glyphForTone(tone_tags);
+
+
   // Compute Prev/Next based on position in sorted
   const idx = sorted.findIndex(s => s.slug === scroll.slug);
   const prev = idx > 0 ? sorted[idx - 1] : null;
   const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
 
   return (
-     <main className="page-dark grove-container scroll-detail" style={{ paddingTop: "2rem", ["--aura"]: aura }}>
+     <main
+  className="page-dark grove-container scroll-detail tone-watermark"
+  data-glyph={glyph}
+  style={{ paddingTop: "2rem", ["--aura"]: aura }}
+>
       <p>
         <Link to="/scrolls">← Back to Scroll Grove</Link>
       </p>
