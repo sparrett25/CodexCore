@@ -1,0 +1,125 @@
+/* Backdrop & layout */
+.about-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 72px;
+  color: #e9eefc;
+}
+
+.return-launch {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #e9eefc;
+  border: 1px solid rgba(180,200,255,.35);
+  background: rgba(150,170,240,.18);
+  transition: filter .15s ease, transform .15s ease;
+}
+.return-launch:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+body:has(.about-wrap) {
+  background: radial-gradient(1200px 800px at 50% 0%,
+            rgba(32,40,80,.35), rgba(10,12,26,.96)) no-repeat, #0b0e1a;
+}
+
+/* Header */
+.about-header { text-align: center; margin-bottom: 10px; }
+.about-title { font-size: 2.2rem; letter-spacing: .5px; color: #f4f7ff; }
+.about-sub { color: #cfd9ff; opacity: .95; margin-top: 6px; }
+
+/* In-page nav */
+.about-nav {
+  margin: 14px auto 8px;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.about-nav a {
+  text-decoration: none; color: #e9eefc; font-size: .95rem;
+  padding: 6px 10px; border-radius: 999px;
+  border: 1px solid rgba(180,200,255,.35);
+  background: rgba(150,170,240,.18);
+}
+.about-nav a:hover { filter: brightness(1.08); }
+
+/* Sections */
+.about-section { margin-top: 24px; }
+.about-section h2 { margin: 0 0 10px; color: #f2f6ff; }
+.about-quote {
+  font-style: italic; text-align: center; margin: 10px auto 18px; max-width: 720px;
+  background: rgba(20,24,42,.6); border-left: 3px solid rgba(180,200,255,.35);
+  padding: 12px 16px; border-radius: 10px; color: #eaefff;
+}
+
+/* Foundations */
+.foundation-grid {
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.foundation-card {
+  background: linear-gradient(180deg, rgba(18,22,40,.88), rgba(14,18,34,.92));
+  border: 1px solid rgba(160,185,255,.22);
+  border-radius: 14px; padding: 14px;
+}
+.foundation-card.wide { grid-column: 1 / -1; }
+
+/* Laws list */
+.law-list {
+  display: grid; gap: 10px;
+  grid-template-columns: 1fr;
+  padding-left: 0; list-style: none;
+}
+.law-list li {
+  background: rgba(18,22,40,.7);
+  border: 1px solid rgba(160,185,255,.22);
+  border-radius: 12px; padding: 10px 12px;
+}
+
+/* Principles badges */
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+.tone-badge {
+  background: rgba(150,170,240,.18);
+  border: 1px solid rgba(180,200,255,.35);
+  color: #eef3ff; padding: 6px 10px; border-radius: 999px; font-size: .9rem;
+}
+.muted { opacity: .9; }
+
+/* How it works */
+.how-list { margin: 6px 0; }
+.how-list li { margin: 4px 0; }
+
+/* Offerings grid */
+.offer-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.module-card {
+  text-decoration: none; color: inherit;
+  background: linear-gradient(180deg, rgba(26,28,38,.92), rgba(16,18,28,.95));
+  border: 1px solid rgba(150,170,240,.18);
+  border-radius: 14px; padding: 14px;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+.module-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(40,60,120,.28); }
+.module-card.disabled { opacity: .55; pointer-events: none; }
+.module-card .module-tag { font-weight: 600; color: #f4f7ff; margin-bottom: 6px; }
+.module-card .module-desc { color: #dfe7ff; opacity: .95; }
+
+/* Optional subtle tints by tag */
+.module-card.grove    { box-shadow: 0 8px 22px rgba(120,210,190,.18); }
+.module-card.journal  { box-shadow: 0 8px 22px rgba(150,170,255,.18); }
+.module-card.ember    { box-shadow: 0 8px 22px rgba(255,200,120,.18); }
+.module-card.reels    { box-shadow: 0 8px 22px rgba(160,230,255,.18); }
+.module-card.about    { box-shadow: 0 8px 22px rgba(190,180,255,.18); }
+.module-card.skymap   { box-shadow: 0 8px 22px rgba(190,180,255,.12); }
+.module-card.vault    { box-shadow: 0 8px 22px rgba(200,210,220,.12); }
+.module-card.kairos   { box-shadow: 0 8px 22px rgba(200,170,255,.12); }
+.module-card.prosperum{ box-shadow: 0 8px 22px rgba(255,220,160,.12); }
+
+.coming-title { margin-top: 14px; color: #cfd9ff; opacity: .95; }
+
+/* Footer */
+.about-footer { margin-top: 22px; text-align: center; color: #cfe0ff; }
+.about-footer a { color: #eaf0ff; text-decoration: underline; }

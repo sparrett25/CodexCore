@@ -1,0 +1,69 @@
+/* Page shell aligns with Codex visuals while keeping the quiet gateway tone */
+.landing {
+  --ink-0:#e8eefc; --muted:#a9b4cf;
+  --ring:0 0 0 1px rgba(136,165,255,.18), 0 0 18px rgba(88,118,255,.12);
+
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  color: var(--ink-0);
+  text-align: center;
+  overflow: hidden;
+  background: #0a0a0f;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Background image layer */
+.landing__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: .9; filter: saturate(.9) brightness(.9);
+  z-index: 0;
+}
+
+/* Subtle vignette + stars haze */
+.landing::after {
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, rgba(90,110,255,.12), transparent 55%),
+    radial-gradient(1000px 600px at 80% 0%, rgba(150,120,255,.10), transparent 50%),
+    radial-gradient(60% 60% at 50% 120%, rgba(0,0,0,.55), transparent 40%),
+    linear-gradient(180deg, rgba(0,0,10,.25), rgba(0,0,0,.65) 65%, rgba(0,0,0,.85));
+  pointer-events:none;
+  z-index: 1;
+}
+
+.landing__glyph {
+  z-index: 2;
+  margin: 0;
+}
+.landing__glyph img { width: 180px; height: auto; }
+
+.landing__header { z-index:2; margin-top: 1rem; }
+.landing__title {
+  margin: 0;
+  font-size: clamp(1.4rem, 1.1rem + 1.6vw, 2.1rem);
+  text-shadow: 0 0 14px rgba(120,140,255,.25);
+}
+.landing__alt { margin:.5rem 0 0; color: var(--muted); font-style: italic; }
+
+.landing__whisper { z-index:2; margin-top: 1.25rem; opacity:.85; line-height:1.6; }
+
+.landing__actions {
+  z-index:2; margin-top: 1.5rem; display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;
+}
+.landing__btn {
+  text-decoration: none;
+  color: var(--ink-0);
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(136,165,255,.25);
+  box-shadow: var(--ring);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  background: linear-gradient(180deg, rgba(136,165,255,.14), rgba(136,165,255,.06));
+}
+.landing__btn:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(136,165,255,.25), 0 0 24px rgba(88,118,255,.22); }
+.landing__btn--ghost { background: rgba(255,255,255,.04); }

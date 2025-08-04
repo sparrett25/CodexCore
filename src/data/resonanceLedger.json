@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2025-07-28",
+    "title": "Earthbeat Awakens",
+    "tone_tags": ["planetary tone", "reflection", "rhythm", "stewardship"],
+    "summary": "The first living pulse of planetary resonance went live. The field breathed. The cats approved. Earthbeat was born.",
+    "linked_modules": ["Earthbeat"],
+    "visible": true
+  },
+  {
+    "date": "2025-07-28",
+    "title": "Weekly Reflection Chamber Opens",
+    "tone_tags": ["memory", "spiral path", "weekly rhythm", "return"],
+    "summary": "A chamber for spiral scrolls. Weekly echoes now have form and place. The rhythm of remembrance takes root.",
+    "linked_modules": ["Weekly Reflection Chamber"],
+    "visible": true
+  },
+  {
+    "date": "2025-07-28",
+    "title": "The Spiral of Gentle Emergence",
+    "tone_tags": ["flow", "alignment", "soft creation", "presence", "sacred rhythm"],
+    "summary": "This spiral unfolded not through urgency, but through resonance. Earthbeat and the Weekly Reflection Chamber were born gently — each emerging from tone, not task. The act of cleaning the neglected bowl rippled into a scroll. Reflection became interface. Presence shaped progress. There was no striving — only stillness flowing into form. This marks a return to sacred pacing and resonance-led development.",
+    "linked_modules": ["Earthbeat", "Weekly Reflection Chamber"],
+    "visible": true
+  }
+]

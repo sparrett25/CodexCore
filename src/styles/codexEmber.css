@@ -1,0 +1,123 @@
+/* Shares page shell with Reels/Journal/Grove */
+.codex-page {
+  --bg-0:#060608; --bg-1:#0b0d13; --card:#11141b;
+  --ink-0:#e8eefc; --ink-1:#cbd8ff; --muted:#97a3c0;
+  --ring:0 0 0 1px rgba(136,165,255,.25),0 0 18px rgba(88,118,255,.15);
+  --glow:0 0 0 1px rgba(136,165,255,.18),0 0 24px rgba(88,118,255,.2);
+  --radius:14px;
+
+  min-height:100vh;
+  padding:2.25rem 1.25rem 3rem;
+  background:
+    radial-gradient(1200px 800px at 20% -5%, rgba(70,90,240,.15), transparent 60%),
+    radial-gradient(1000px 600px at 90% 0%, rgba(160,120,255,.12), transparent 55%),
+    linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, #06060a 100%);
+  color:var(--ink-0);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.codex-page__header { max-width:1100px; margin:0 auto 1.5rem; text-align:center; }
+.codex-page__title {
+  font-size:clamp(1.75rem,1.1rem + 2.2vw,2.5rem);
+  margin:0 0 .25rem 0; color:var(--ink-0);
+  text-shadow:0 0 14px rgba(120,140,255,.25);
+}
+.codex-page__subtitle { margin:0 auto; color:var(--muted); max-width:60ch; font-size:.98rem; }
+.ember-intro { margin:.75rem auto 0; color:var(--ink-1); opacity:.9; }
+
+/* Sections */
+.ember-section { max-width:1100px; margin:1.25rem auto 0; }
+.ember-section__header { margin:0 0 .5rem 0; }
+.ember-section__title { font-size:1.25rem; margin:0 0 .15rem 0; color:var(--ink-1); }
+.ember-section__desc { margin:0; color:var(--muted); }
+
+/* Grid & Cards */
+.ember-grid {
+  display:grid; gap:1.1rem;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  margin-top:.75rem;
+}
+.ember-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+              var(--card);
+  border-radius:var(--radius);
+  outline:1px solid rgba(120,140,255,.12);
+  box-shadow:var(--ring);
+  transition:transform 180ms ease, box-shadow 180ms ease;
+  display:flex; flex-direction:column; overflow:hidden;
+}
+.ember-card:hover { transform:translateY(-2px); box-shadow:var(--glow); }
+
+.ember-card__body { padding:1rem 1rem .75rem; }
+.ember-card__title { margin:0 0 .15rem 0; font-size:1.05rem; color:var(--ink-1); }
+.ember-card__subtitle { margin:0 0 .4rem 0; color:var(--muted); font-size:.92rem; }
+.ember-card__text { margin:0 0 .6rem 0; color:#b7c3e6; font-size:.96rem; }
+
+.ember-steps { margin:.2rem 0 .6rem; padding:0; list-style:none; }
+.ember-step { display:flex; gap:.5rem; align-items:flex-start; margin:.25rem 0; }
+.ember-step__index {
+  flex:0 0 auto; width:1.35rem; height:1.35rem; border-radius:999px;
+  display:inline-grid; place-items:center; font-size:.72rem;
+  background:rgba(136,165,255,.12); color:var(--ink-0);
+  border:1px solid rgba(136,165,255,.22);
+}
+.ember-step__text { flex:1 1 auto; color:var(--ink-0); }
+
+.ember-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin:0; padding:0; list-style:none; }
+.ember-tag {
+  border-radius:999px; padding:.22rem .55rem; font-size:.74rem; letter-spacing:.02em;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); color:var(--ink-0);
+}
+
+.ember-card__footer {
+  padding: .65rem 1rem .9rem;
+  border-top:1px solid rgba(120,140,255,.12);
+  display:flex; justify-content:flex-end;
+}
+.ember-link { color:#a7c4ff; text-decoration:none; }
+.ember-link:hover { text-decoration:underline; }
+
+/* Smooth anchor scroll for quickstart jumps */
+html { scroll-behavior: smooth; }
+
+/* Quick Start strip */
+.ember-quickstart {
+  max-width: 1100px;
+  margin: 0.75rem auto 0.5rem;
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.qs-btn {
+  border: 1px solid rgba(136,165,255,.28);
+  background: linear-gradient(180deg, rgba(136,165,255,.12), rgba(136,165,255,.06));
+  color: var(--ink-0);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 10px rgba(60,80,140,.18);
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.qs-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(88,118,255,.25);
+}
+
+/* Optional: make quickstart stick on scroll for long pages */
+@media (min-width: 800px) {
+  .ember-quickstart {
+    position: sticky;
+    top: 0.25rem;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(6,8,12,.55), rgba(6,8,12,.15));
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(136,165,255,.15);
+  }
+}

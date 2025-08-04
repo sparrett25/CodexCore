@@ -1,0 +1,56 @@
+{
+  "intro": {
+    "note": "Begin simple. Let repetition do the shaping."
+  },
+  "rituals": [
+    {
+      "id": "r-nightfall",
+      "title": "Nightfall Spiral",
+      "subtitle": "Release • Soften • Close the Field",
+      "description": "Three breaths, a gentle scan of the day, and one clear letting-go.",
+      "steps": [
+        "Three slow breaths (in 4 • hold 2 • out 6).",
+        "Name one thing to release. Speak it softly: 'I let this fall.'",
+        "Gratitude for one moment that mattered."
+      ],
+      "tags": ["evening", "closure", "soften"]
+    },
+    {
+      "id": "r-firstlight",
+      "title": "First Light Spiral",
+      "subtitle": "Wake • Align • Open the Field",
+      "description": "Three breaths, a clear intent, and a single aligned act to begin the day.",
+      "steps": [
+        "Three slow breaths (in 4 • hold 2 • out 6).",
+        "Name today's intent in one sentence.",
+        "Choose one small aligned act and begin."
+      ],
+      "tags": ["morning", "opening", "intent"]
+    }
+  ],
+  "sequences": [
+    {
+      "id": "s-qigong-10",
+      "title": "Qi Gong Micro Spiral (10 min)",
+      "subtitle": "Loosen • Circulate • Settle",
+      "description": "A short restorative set for work-from-home days or lunch resets.",
+      "steps": [
+        "Neck circles (gentle, both directions).",
+        "Shoulder rolls + arm shakes.",
+        "Spinal wave + soft twists.",
+        "Three grounding breaths, feet heavy."
+      ],
+      "tags": ["movement", "restore"]
+    }
+  ],
+  "resources": [
+    {
+      "id": "res-scroll-alignment",
+      "title": "Scroll of Spoken Alignment",
+      "subtitle": "Words that place things where they belong",
+      "description": "A quick reminder on speaking from center when tone feels scattered.",
+      "link": "#",
+      "tags": ["language", "tone"]
+    }
+  ]
+}
