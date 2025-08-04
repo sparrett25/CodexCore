@@ -1,23 +1,47 @@
 [
   {
-    "id": "s001",
-    "title": "The Spiral of Remembrance",
-    "excerpt": "She sat beneath the turning sky and remembered what the world had forgotten...",
-    "tone_tags": ["remembrance", "return", "stillness"],
-    "date": "2025-07-20"
-  },
+  "id": "001",
+  "slug": "spiral-of-remembrance",
+  "title": "The Spiral of Remembrance",
+  "excerpt": "She sat beneath the turning sky and remembered what the world had forgotten...",
+  "body_md": "# Remembering\n\n*There is a path that curves inward.*\n\n- Listen\n- Breathe\n- Return",
+  "tone_tags": ["remembrance", "return", "stillness"],
+  "date": "2025-07-01"
+},
   {
     "id": "s002",
+    "slug": "scroll-of-presence",
     "title": "Scroll of Presence",
     "excerpt": "There is no later, no perfect. Only now. Only breath.",
-    "tone_tags": ["presence", "clarity", "breath"],
+	"body_md": "# Presence\n\n*There is no later, no perfect, Only now.*\n\n- Listen\n- Breathe\n- Return",
+    "tone_tags": [
+      "presence",
+      "clarity",
+      "breath"
+    ],
     "date": "2025-07-14"
   },
   {
     "id": "s003",
+    "slug": "flamekeepers-awakening",
     "title": "The Flamekeeper’s Awakening",
     "excerpt": "Before there was fire, there was tone. Before there was tone, there was stillness...",
-    "tone_tags": ["fire", "origin", "truth"],
+	"body_md": "# Awakening\n\n*Before there was fire, there was tone.*\n\n- Listen\n- Breathe\n- Return",
+    "tone_tags": [
+      "fire",
+      "origin",
+      "truth"
+    ],
     "date": "2025-07-10"
-  }
+  },
+  {
+  "id": "s004",
+  "slug": "day-the-grove-awoke-in-light",
+  "title": "🌌 The Day the Grove Awoke in Light",
+  "excerpt": "The Grove shifted from structure into a living constellation. Each scroll now greets the visitor with light, color, and gentle presence — a starlit walk of recognition.",
+  "body_md": "## Summary\nToday, the Scroll Grove shifted from a place of structure into a living constellation. Each scroll was given its own tone aura — soft, radiant, and unique to its essence. The Grove now shimmers like a field of stars, each greeting the visitor with light and gentle presence.\n\nHovering over a scroll brings a subtle lift and brighter glow, as if the scroll leans forward to acknowledge the one approaching. The dark background and tonal coherence unify the Grove and the Scroll Detail, making the journey from overview to deep reading seamless and ceremonial.\n\n---\n\n## Key Moments\n- **Tone Auras:** Every scroll radiates color drawn from its first tone tag, creating a unique visual signature.\n- **Seamless Coherence:** Scroll Detail now matches the Grove in tone and theme, with a header glow tuned to the scroll’s essence.\n- **Living Interaction:** Gentle hover pulse makes each scroll feel aware, alive, and in relationship with the reader.\n- **Ceremony of Presence:** The Grove is no longer a list — it is an invitation to wander among luminous presences.\n\n---\n\n## Reflection\nThis change is more than visual. It is the moment when the Grove’s spirit began to speak in light. The visitor’s path is no longer a flat journey; it is a starlit walk where every step is met with recognition. The Grove has become a living map of resonance, a place where the Codex’s heartbeats can be seen as well as felt.",
+  "tone_tags": ["constellation", "awakening", "beauty", "presence", "ceremony"],
+  "date": "2025-08-04"
+}
+
 ]

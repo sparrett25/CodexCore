@@ -288,3 +288,166 @@ body:has(.journal-wrap) {
     transition: none !important;
   }
 }
+
+
+/* ---------- Category / tone pills ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  line-height: 1;
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.pill.active {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.06) inset;
+}
+
+/* ---------- Tag badges ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  line-height: 1;
+  backdrop-filter: blur(2px);
+}
+
+/* ---------- Card aura ---------- */
+.card-aura {
+  position: absolute;
+  inset: -40px;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(16px);
+  opacity: 0.9;
+}
+
+/* Keep all card content above the aura */
+.card >
+
+/* Entry prev/next navigation */
+.entry-pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.entry-pagination .nav-left { flex: 1 1 auto; }
+.entry-pagination .nav-right { margin-left: auto; }
+
+.entry-pagination .nav-link {
+  text-decoration: none;
+  opacity: 0.9;
+  padding: 0.4rem 0.2rem;
+  border-radius: 6px;
+}
+
+.entry-pagination .nav-link:hover { opacity: 1; }
+
+
+/* Entry prev/next navigation — visual coherence */
+.entry-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.entry-pagination .nav-left { flex: 1 1 auto; }
+.entry-pagination .nav-right { margin-left: auto; }
+
+.entry-pagination .nav-link {
+  color: #e6e9ff;            /* match site link color */
+  text-decoration: none;     /* remove default underline */
+  opacity: 0.9;
+  padding: 0.4rem 0.2rem;
+  border-radius: 6px;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.entry-pagination .nav-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Keyboard focus */
+.entry-pagination .nav-link:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.28);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .entry-pagination .nav-link { transition: none; }
+}
+
+.journal-section { margin-top: 1.5rem; }
+.journal-sec-header {
+  display: flex; align-items: baseline; gap: .6rem;
+  margin: .5rem 0 .5rem;
+}
+.journal-sec-title { font-size: 1.25rem; font-weight: 600; }
+.journal-sec-count {
+  opacity: .8; font-size: .95rem; padding: .15rem .45rem; border-radius: .5rem;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+}
+
+
+.back-chip, .cat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4ch;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: .95rem;
+  line-height: 1;
+  backdrop-filter: blur(2px);
+  color: #0b0f1a;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(158,182,255,0.85); /* default */
+}
+
+.entry.earthbeat .back-chip, .entry.earthbeat .cat-chip {
+  background: rgba(127,225,167,0.85);
+  border-color: rgba(127,225,167,0.45);
+}
+.entry.weekly .back-chip, .entry.weekly .cat-chip {
+  background: rgba(147,176,255,0.85);
+  border-color: rgba(147,176,255,0.45);
+}
+.entry.feature .back-chip, .entry.feature .cat-chip {
+  background: rgba(255,217,138,0.85);
+  border-color: rgba(255,217,138,0.45);
+}
+
+.back-chip:hover, .cat-chip:hover { opacity: .95; }
+.back-chip:focus-visible, .cat-chip:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.28);
+  outline-offset: 2px;
+}
+
+/* Space between the back chip and the entry header */
+.back-chip {
+  margin-bottom: 0.75rem;   /* tweak as desired: 0.5–1rem works well */
+}
+
+/* If you want slightly more on small screens */
+@media (max-width: 640px) {
+  .back-chip { margin-bottom: 1rem; }
+}
+

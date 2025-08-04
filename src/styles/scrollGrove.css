@@ -59,6 +59,7 @@
   transform: translateY(12px) scale(0.995);
   filter: blur(2px);
   transition-delay: calc(var(--reveal-delay, 0) * 60ms);
+  cursor: pointer;
 }
 .scroll-card.in {
   opacity: 1;
@@ -252,6 +253,12 @@ body:has(.grove-wrap) {
   color: #e9eefc;
 }
 
+
+.tag-chip { transition: transform 120ms ease, opacity 120ms ease; }
+.tag-chip:hover { transform: translateY(-1px); opacity: 0.95; }
+.tag-chip.active { box-shadow: 0 0 0 2px rgba(255,255,255,0.06) inset; }
+
+
 /* Active state for All (neutral celestial) */
 .tag-chip.all.active {
   background: rgba(170,190,255,.32);
@@ -268,3 +275,240 @@ body:has(.grove-wrap) {
 .tag-chip.active[data-tag="fire"]        { background: hsl(var(--tag-fire) / .28);        border-color: hsl(var(--tag-fire) / .55); }
 .tag-chip.active[data-tag="origin"]      { background: hsl(var(--tag-origin) / .28);      border-color: hsl(var(--tag-origin) / .55); }
 .tag-chip.active[data-tag="truth"]       { background: hsl(var(--tag-truth) / .28);       border-color: hsl(var(--tag-truth) / .55); }
+
+
+.scroll-body h1, .scroll-body h2, .scroll-body h3,
+.scroll-body h4, .scroll-body h5, .scroll-body h6 { margin: 1rem 0 .5rem; }
+.scroll-body p { line-height: 1.6; margin: .75rem 0; }
+.scroll-body ul { margin: .75rem 0 .75rem 1.25rem; }
+.scroll-body a { text-decoration: underline; }
+
+.scroll-pagination .nav-link { text-decoration: none; opacity: .9; }
+.scroll-pagination .nav-link:hover { opacity: 1; }
+
+/* Full-page dark shell */
+.page-dark {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(80, 120, 255, 0.12), transparent 60%),
+    radial-gradient(1200px 600px at 80% 110%, rgba(0, 200, 255, 0.10), transparent 60%),
+    #0b0f1a;
+  color: #e9ecf5;
+}
+
+/* Container already used in Grove; safe to share */
+.grove-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Links + titles in detail */
+.scroll-title,
+.scroll-body a,
+.scroll-pagination .nav-link,
+.grove-container a {
+  color: #e6e9ff;
+  text-decoration: none;
+}
+.scroll-body a { text-decoration: underline; }
+.grove-container a:hover { opacity: 0.9; }
+
+/* Tag badges on dark bg */
+.tag-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dfe6ff;
+}
+
+/* Body content spacing */
+.scroll-body h1, .scroll-body h2, .scroll-body h3,
+.scroll-body h4, .scroll-body h5, .scroll-body h6 { margin: 1rem 0 .5rem; }
+.scroll-body p { line-height: 1.6; margin: .75rem 0; }
+.scroll-body ul { margin: .75rem 0 .75rem 1.25rem; }
+
+
+/* Make the header its own stacking context so the glow sits behind it */
+.scroll-detail .scroll-detail-header {
+  position: relative;
+  isolation: isolate;         /* ensures ::before stays under header content */
+  padding-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Soft, wide halo using srgb (widely supported) */
+.scroll-detail .scroll-detail-header::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -80px;
+  width: 1200px;
+  height: 360px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: -1;
+
+  /* One strong center glow + a wider faint glow */
+  background:
+    radial-gradient(600px 240px at 50% 25%, var(--aura), transparent 70%),
+    radial-gradient(900px 320px at 20% 10%, color-mix(in srgb, var(--aura) 35%, transparent), transparent 70%);
+  opacity: 0.28;
+  filter: blur(22px);
+}
+
+background:
+    radial-gradient(600px 240px at 50% 25%, var(--aura), transparent 70%),
+    radial-gradient(900px 320px at 20% 10%, color-mix(in srgb, var(--aura) 35%, transparent), transparent 70%);
+  opacity: 0.28;
+  filter: blur(22px);
+}
+
+.scroll-detail { outline: 2px solid var(--aura); }  /* remove after testing */
+
+
+
+
+
+
+
+/* Slight title glow for readability on bright auras */
+.scroll-detail .scroll-title {
+  text-shadow: 0 1px 16px color-mix(in oklab, var(--aura) 25%, transparent);
+}
+
+/* Optional: tint the tag badges lightly with the aura */
+.scroll-detail .tag-badge {
+  background: color-mix(in oklab, var(--aura) 18%, rgba(255,255,255,0.06));
+  border-color: color-mix(in oklab, var(--aura) 22%, rgba(255,255,255,0.1));
+}
+
+
+.scroll-detail-header {
+  position: relative;
+  padding-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  isolation: isolate; /* keeps the aura behind header content */
+}
+
+/* The aura layer */
+.scroll-detail-header .aura {
+  position: absolute;
+  inset: -80px -60px -20px -60px; /* wider than header for a smooth halo */
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(18px);
+  opacity: .9; /* overall strength */
+}
+
+/* Ensure header content sits above the aura */
+.scroll-detail-header > * { position: relative; z-index: 1; }
+
+/* Optional: subtle title glow */
+.scroll-detail .scroll-title { text-shadow: 0 1px 14px rgba(255,255,255,0.05); }
+
+
+/* Ensure aura sits behind content and stays inside the card */
+.scroll-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.scroll-card .card-aura {
+  position: absolute;
+  inset: -40px;         /* slightly larger than card for a soft edge */
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(16px);
+  opacity: 0.9;
+}
+
+/* Make card content sit above the aura */
+.scroll-card .scroll-card-inner,
+.scroll-card .scroll-header,
+.scroll-card .scroll-title,
+.scroll-card .scroll-summary {
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: faint border tint to match the aura */
+.scroll-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+.scroll-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.12);
+}
+
+
+/* --- Hover pulse for Scroll Grove cards --- */
+.scroll-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  will-change: transform;
+}
+
+.scroll-card .card-aura {
+  position: absolute;
+  inset: -40px;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(16px);
+  opacity: 0.9;
+  transform: scale(1);
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+/* Content stays above the aura */
+.scroll-card .scroll-card-inner,
+.scroll-card .scroll-header,
+.scroll-card .scroll-title,
+.scroll-card .scroll-summary {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover: subtle lift + brighter aura + soft shadow */
+.scroll-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 32px rgba(160, 180, 255, 0.06); /* faint global glow */
+}
+
+.scroll-card:hover .card-aura {
+  opacity: 1;           /* brighten a touch */
+  transform: scale(1.03); /* slow, gentle pulse */
+}
+
+/* Focus-visible (keyboard nav) gets the same treatment */
+.scroll-card:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.25);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+}
+.scroll-card:focus-visible .card-aura {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-card,
+  .scroll-card .card-aura {
+    transition: none;
+  }
+}
+
+/* Optional: constellation badge tint */
+.tag-badge[data-tag="constellation"] {
+  background: rgba(180, 156, 255, 0.18);
+  border-color: rgba(180, 156, 255, 0.28);
+  color: #e9e6ff;
+}
