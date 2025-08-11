@@ -121,3 +121,56 @@ html { scroll-behavior: smooth; }
     border: 1px solid rgba(136,165,255,.15);
   }
 }
+
+/* --- Helper block --- */
+.ember-howto {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.03);
+}
+.ember-howto__title {
+  margin: 0 0 .25rem;
+  font-size: 1rem;
+}
+.ember-howto__text {
+  margin: 0; color: #dfe3f0; line-height: 1.5;
+}
+
+/* --- Filter --- */
+.ember-filter {
+  display: inline-flex; gap: .5rem; margin-top: .5rem;
+}
+.ember-filter__btn {
+  padding: .35rem .7rem;
+  border: 1px solid #2a2f3f;
+  border-radius: .5rem;
+  background: #0f1220;
+  color: #e9ecf5;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.ember-filter__btn.is-active {
+  border-color: #e9ecf5;
+  background: #151a2c;
+}
+
+/* --- Featured badge --- */
+.ember-card__titlebar {
+  display: flex; align-items: center; gap: .5rem; justify-content: space-between;
+}
+.ember-badge {
+  display: inline-block;
+  padding: .2rem .5rem;
+  border-radius: .5rem;
+  font-size: .75rem;
+  line-height: 1;
+  color: #333;
+  background: #f2f2f2;
+}
+.ember-badge--featured {
+  background: #fff3d1;
+  border: 1px solid #f0d27a;
+  color: #6a4b00;
+}

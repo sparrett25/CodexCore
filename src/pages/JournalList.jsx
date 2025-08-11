@@ -27,8 +27,6 @@ const TONE_COLORS = {
   default: "#9eb6ff",
 };
 
-
-
 function hexToRgba(hex, alpha = 1) {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   if (!m) return `rgba(158,182,255,${alpha})`;
@@ -73,41 +71,41 @@ function getAuraStyles(tags = [], cat = "all") {
 
 /* ---------- Categories & order ---------- */
 const CATS = ["earthbeat", "weekly", "feature"];
+const PAGE_SIZE = 4; // show this many per section in "All" view
 
 export default function JournalList() {
-	
-	  // Read `?cat=` from URL and keep it synced
-	const location = useLocation();
-	const navigate = useNavigate();
+  // Read `?cat=` from URL and keep it synced
+  const location = useLocation();
+  const navigate = useNavigate();
 
-	const initialCat = useMemo(() => {
-	  const sp = new URLSearchParams(location.search);
-	  const c = sp.get("cat");
-	  return CATS.includes(c) ? c : "all";
-	}, [location.search]);
+  const initialCat = useMemo(() => {
+    const sp = new URLSearchParams(location.search);
+    const c = sp.get("cat");
+    return CATS.includes(c) ? c : "all";
+  }, [location.search]);
 
-	const [cat, setCat] = useState(initialCat);
-	const [query, setQuery] = useState("");
-	const containerRef = useRef(null);
+  const [cat, setCat] = useState(initialCat);
+  const [query, setQuery] = useState("");
+  const containerRef = useRef(null);
 
-  
+  // NEW: per-section expanded state (for "All" view only)
+  const [expanded, setExpanded] = useState({ earthbeat: false, weekly: false, feature: false });
+
   useEffect(() => {
-  const sp = new URLSearchParams(location.search);
-  const current = sp.get("cat") || "all";
-  if (cat !== current) {
-    if (cat === "all") sp.delete("cat");
-    else sp.set("cat", cat);
-    navigate(
-      { pathname: "/journal", search: sp.toString() ? `?${sp}` : "" },
-      { replace: true }
-    );
-  }
-}, [cat, location.search, navigate]);
+    const sp = new URLSearchParams(location.search);
+    const current = sp.get("cat") || "all";
+    if (cat !== current) {
+      if (cat === "all") sp.delete("cat");
+      else sp.set("cat", cat);
+      navigate(
+        { pathname: "/journal", search: sp.toString() ? `?${sp}` : "" },
+        { replace: true }
+      );
+    }
+  }, [cat, location.search, navigate]);
 
-  
   // Build grouped entries: filtered by search, then sorted within each category
   const grouped = useMemo(() => {
-    // Search predicate
     const match = (e) => {
       if (!query.trim()) return true;
       const q = query.toLowerCase();
@@ -118,18 +116,14 @@ export default function JournalList() {
       );
     };
 
-    // Seed groups
     const base = { earthbeat: [], weekly: [], feature: [] };
-
-    // Fill groups (respecting optional category filter)
     for (const e of journalEntries) {
       if (cat !== "all" && e.category !== cat) continue;
-      if (!base[e.category]) continue; // ignore unknown categories
+      if (!base[e.category]) continue;
       if (!match(e)) continue;
       base[e.category].push(e);
     }
 
-    // Sort each group newest → oldest
     for (const k of Object.keys(base)) {
       base[k].sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
     }
@@ -154,31 +148,57 @@ export default function JournalList() {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, [grouped]);
+    // re-run when content shown changes (expand/collapse)
+  }, [grouped, expanded]);
+
+  const sectionLabel = (sectionCat) =>
+    sectionCat === "earthbeat" ? "Earthbeat" :
+    sectionCat === "weekly"    ? "Weekly Reflections" :
+    sectionCat === "feature"   ? "Features" : sectionCat;
 
   // Helper to render one category section
   const renderSection = (sectionCat, items) => {
     if (!items || items.length === 0) return null;
-    const label =
-      sectionCat === "earthbeat" ? "Earthbeat" :
-      sectionCat === "weekly"    ? "Weekly Reflections" :
-      sectionCat === "feature"   ? "Features" : sectionCat;
 
-    
-	
-	
-	
-	
-	
-	return (
-      <section key={sectionCat} className="journal-section">
+    const isAllView = cat === "all";
+    const isExpanded = expanded[sectionCat];
+    const hasMore = items.length > PAGE_SIZE;
+    const toShow = isAllView && !isExpanded ? items.slice(0, PAGE_SIZE) : items;
+
+    const label = sectionLabel(sectionCat);
+    const sectionId = `section-${sectionCat}`;
+
+    return (
+      <section key={sectionCat} className="journal-section" aria-labelledby={`${sectionId}-title`}>
         <header className="journal-sec-header">
-          <h2 className="journal-sec-title">{label}</h2>
+          <h2 id={`${sectionId}-title`} className="journal-sec-title">{label}</h2>
           <span className="journal-sec-count">{items.length}</span>
+
+          {/* NEW: actions (only in All view, when there are more than PAGE_SIZE) */}
+          {isAllView && hasMore && (
+            <div className="journal-sec-actions">
+              <button
+                type="button"
+                className="journal-more"
+                onClick={() => setExpanded((prev) => ({ ...prev, [sectionCat]: !prev[sectionCat] }))}
+                aria-expanded={isExpanded}
+                aria-controls={sectionId}
+              >
+                {isExpanded ? "Show less" : "View more"}
+              </button>
+              <Link
+                to={`/journal?cat=${sectionCat}`}
+                className="journal-viewall"
+                aria-label={`View all ${label}`}
+              >
+                View all →
+              </Link>
+            </div>
+          )}
         </header>
 
-        <div className="journal-grid">
-          {items.map((e, idx) => (
+        <div id={sectionId} className="journal-grid">
+          {toShow.map((e, idx) => (
             <article
               key={e.slug}
               className={`card ${e.category} reveal`}

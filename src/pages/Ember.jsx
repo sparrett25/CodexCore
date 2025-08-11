@@ -1,5 +1,5 @@
 // /src/pages/Ember.jsx
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import ember from "../data/ember.json";
 import "../styles/codexEmber.css";
 
@@ -117,7 +117,10 @@ const Section = ({ title, description, items = [], itemIdPrefix }) => (
               {tags.length > 0 ? <div className="card-aura" style={getAuraStyles(tags)} /> : null}
 
               <div className="ember-card__body" style={{ position: "relative", zIndex: 1 }}>
-                <h3 className="ember-card__title">{it.title}</h3>
+				<div className="ember-card__titlebar">
+				<h3 className="ember-card__title">{it.title}</h3>
+				{it.featured ? <span className="ember-badge ember-badge--featured">Featured</span> : null}
+			  </div>
                 {it.subtitle ? <p className="ember-card__subtitle">{it.subtitle}</p> : null}
                 {it.description ? <p className="ember-card__text">{it.description}</p> : null}
 
@@ -163,6 +166,8 @@ const Section = ({ title, description, items = [], itemIdPrefix }) => (
 /* ---- Page ---- */
 const Ember = () => {
   const { intro, rituals = [], sequences = [], resources = [] } = ember || {};
+   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
+   const visibleRituals = showFeaturedOnly ? rituals.filter(r => r.featured) : rituals;
 
   return (
     <main className="codex-page">
@@ -172,16 +177,48 @@ const Ember = () => {
           A living hearth for daily rituals — Nightfall & First Light — plus gentle practices and resources.
         </p>
         {intro?.note ? <p className="ember-intro">{intro.note}</p> : null}
+		
+		<aside className="ember-howto">
+		<h3 className="ember-howto__title">How to use these rituals</h3>
+		<p className="ember-howto__text">
+			Start small. Choose <strong>one</strong> ritual and repeat it for a few days.
+			Rituals align <em>breath</em>, <em>attention</em>, and <em>tone</em>—their power comes from
+			<em> consistency</em>, not complexity. When you’re ready, explore the <strong>Featured</strong> set for quick, reliable anchors.
+		</p>
+		</aside>
+		
       </header>
 
       <QuickStart />
 
-      <Section
-        title="Daily Rituals"
-        description="Anchor your mornings and evenings with simple, repeatable ceremonies."
-        items={rituals}
-        itemIdPrefix="ritual"
-      />
+      <section className="ember-section">
+     <header className="ember-section__header">
+       <h2 className="ember-section__title">Daily Rituals</h2>
+       <p className="ember-section__desc">
+         Anchor your mornings and evenings with simple, repeatable ceremonies.
+       </p>
+       <div className="ember-filter" role="toolbar" aria-label="Ritual filter">
+         <button
+           className={`ember-filter__btn ${!showFeaturedOnly ? "is-active" : ""}`}
+           onClick={() => setShowFeaturedOnly(false)}
+         >
+           All
+         </button>
+         <button
+           className={`ember-filter__btn ${showFeaturedOnly ? "is-active" : ""}`}
+           onClick={() => setShowFeaturedOnly(true)}
+         >
+           Featured
+         </button>
+       </div>
+     </header>
+     <Section
+       title=""
+       description=""
+       items={visibleRituals}
+       itemIdPrefix="ritual"
+     />
+   </section>
 
       <Section
         title="Sequences & Practices"

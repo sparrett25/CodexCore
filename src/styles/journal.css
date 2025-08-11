@@ -451,3 +451,43 @@ body:has(.journal-wrap) {
   .back-chip { margin-bottom: 1rem; }
 }
 
+/* Section actions: View more / View all */
+.journal-sec-actions {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.journal-more {
+  border: 1px solid rgba(180,200,255,.35);
+  background: linear-gradient(180deg, rgba(18,22,40,.9), rgba(14,18,34,.92));
+  color: #eef3ff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.journal-more:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(140,160,255,.22), 0 8px 26px rgba(12,16,30,.35) inset;
+  border-color: rgba(200,220,255,.55);
+}
+
+.journal-viewall {
+  color: #cfe0ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: .92;
+  padding: 0.25rem 0.1rem;
+  border-radius: 6px;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.journal-viewall:hover { opacity: 1; transform: translateY(-1px); }
+.journal-viewall:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.28);
+  outline-offset: 2px;
+}

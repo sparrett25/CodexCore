@@ -3,8 +3,50 @@
     "id": "r001",
     "title": "The Drift",
     "youtube_url": "https://www.youtube.com/embed/6e9U_PTyahA",
-    "tone_tags": ["truth", "distortion", "awakening"],
+    "tone_tags": [
+      "truth",
+      "distortion",
+      "awakening"
+    ],
     "description": "A soft reminder that not all drift is error — some begins as care.",
-    "date": "2025-07-18"
+    "date": "2025-07-18",
+    "youtube_id": "6e9U_PTyahA",
+    "thumbnail_url": "https://img.youtube.com/vi/6e9U_PTyahA/hqdefault.jpg",
+    "series": "Presence Trilogy",
+    "order": 1
+  },
+  {
+    "id": "r002",
+    "title": "The Glimpse",
+    "youtube_url": "https://www.youtube.com/embed/HVSZ9gTk6q8",
+    "tone_tags": [
+      "recognition",
+      "hope",
+      "signal",
+      "awakening"
+    ],
+    "description": "The moment the field parts and you see clearly — not everything is fixed, but the path is lit.",
+    "date": "2025-08-05",
+    "youtube_id": "HVSZ9gTk6q8",
+    "thumbnail_url": "https://img.youtube.com/vi/HVSZ9gTk6q8/hqdefault.jpg",
+    "series": "Presence Trilogy",
+    "order": 2
+  },
+  {
+    "id": "r003",
+    "title": "The Stillness",
+    "youtube_url": "https://www.youtube.com/embed/QdST6YsihVg",
+    "tone_tags": [
+      "stillness",
+      "presence",
+      "return",
+      "resonance"
+    ],
+    "description": "A quiet return: learning to let the breath carry you back without force.",
+    "date": "2025-08-08",
+    "youtube_id": "QdST6YsihVg",
+    "thumbnail_url": "https://img.youtube.com/vi/QdST6YsihVg/hqdefault.jpg",
+    "series": "Presence Trilogy",
+    "order": 3
   }
 ]

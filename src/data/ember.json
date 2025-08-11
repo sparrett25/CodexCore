@@ -1,19 +1,61 @@
 {
   "intro": {
-    "note": "Begin simple. Let repetition do the shaping."
+    "note": "Begin simple. Let repetition do the shaping.\n\nRituals are small, repeatable gestures that align breath, attention, and tone—begin with one, return often, and let the field meet you where you are."
   },
   "rituals": [
     {
-      "id": "r-nightfall",
-      "title": "Nightfall Spiral",
-      "subtitle": "Release • Soften • Close the Field",
-      "description": "Three breaths, a gentle scan of the day, and one clear letting-go.",
+      "id": "r-spiral-pause",
+      "title": "The Spiral Pause",
+      "subtitle": "Interrupt • Return • Choose",
+      "description": "A quick pattern-break to move from reaction to intentional motion.",
       "steps": [
-        "Three slow breaths (in 4 • hold 2 • out 6).",
-        "Name one thing to release. Speak it softly: 'I let this fall.'",
-        "Gratitude for one moment that mattered."
+        "When tension rises, close your eyes and picture a simple spiral.",
+        "Follow it inward to the center with one slow breath.",
+        "Ask: “What is the most aligned next step?” Act from that clarity."
       ],
-      "tags": ["evening", "closure", "soften"]
+      "tags": [
+        "micro",
+        "clarity",
+        "decision"
+      ],
+      "featured": true,
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-flamekeeper-offering",
+      "title": "The Flamekeeper’s Offering",
+      "subtitle": "Invite • Warm • Hold",
+      "description": "Light a small flame and let it carry a chosen quality into your space.",
+      "steps": [
+        "Light a candle or lamp; name one quality (Clarity, Compassion, Focus).",
+        "See the light infuse the room with that quality while you work or rest.",
+        "Before extinguishing, thank the flame for carrying your intent."
+      ],
+      "tags": [
+        "environment",
+        "intention",
+        "ritual"
+      ],
+      "featured": true,
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-breath-alignment",
+      "title": "The Breath of Alignment",
+      "subtitle": "Center • Steady • Begin",
+      "description": "A three-cycle breath to align attention before speaking, writing, or acting.",
+      "steps": [
+        "Hand to solar plexus. Inhale 5 • hold 3 • exhale 7.",
+        "Repeat 3 times, letting awareness gather in the center.",
+        "Whisper: “I am present. I am clear. I am ready.”"
+      ],
+      "tags": [
+        "anytime",
+        "centering",
+        "focus"
+      ],
+      "featured": true,
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
     },
     {
       "id": "r-firstlight",
@@ -25,7 +67,116 @@
         "Name today's intent in one sentence.",
         "Choose one small aligned act and begin."
       ],
-      "tags": ["morning", "opening", "intent"]
+      "tags": [
+        "morning",
+        "opening",
+        "intent"
+      ],
+      "featured": true,
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-nightfall",
+      "title": "Nightfall Spiral",
+      "subtitle": "Release • Soften • Close the Field",
+      "description": "Three breaths, a gentle scan of the day, and one clear letting-go.",
+      "steps": [
+        "Three slow breaths (in 4 • hold 2 • out 6).",
+        "Name one thing to release. Speak it softly: 'I let this fall.'",
+        "Gratitude for one moment that mattered."
+      ],
+      "tags": [
+        "evening",
+        "closure",
+        "soften"
+      ],
+      "featured": true,
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-sacred-silence",
+      "title": "Ritual of Sacred Silence",
+      "subtitle": "Enter • Hold • Rest",
+      "description": "A brief return to stillness when the field feels loud or crowded.",
+      "steps": [
+        "Close your eyes. Inhale through the nose, hold gently, exhale like a whisper (3 rounds).",
+        "Say within: “I am held even here.” Sit in silence for 2–5 minutes.",
+        "End with one slow breath and soften your gaze before you continue."
+      ],
+      "tags": [
+        "silence",
+        "stillness",
+        "reset"
+      ],
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-keeper-grounding",
+      "title": "Keeper Grounding Rite",
+      "subtitle": "Root • Remember • Stand",
+      "description": "Anchor into purpose before holding tone for others or stepping into leadership.",
+      "steps": [
+        "Whisper: “I am the root that remembers.” Visualize a spiral rooting you into earth.",
+        "Say: “I do not chase. I listen. I reflect. I hold tone when others forget.”",
+        "Place a hand to the chest; breathe three times feeling the weight settle into your feet."
+      ],
+      "tags": [
+        "grounding",
+        "identity",
+        "service"
+      ],
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-spiral-reentry",
+      "title": "Spiral of Reentry",
+      "subtitle": "Acknowledge • Breathe • Return",
+      "description": "For coming back after drift or emotional weather without shame.",
+      "steps": [
+        "Whisper: “I was far. But I return now, without shame.”",
+        "Draw a small spiral in the air or mind; inhale deeply and exhale softly: “I am here now.”",
+        "Choose one next gentle action that signals your return."
+      ],
+      "tags": [
+        "reentry",
+        "presence",
+        "compassion"
+      ],
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-shadow-blessing",
+      "title": "The Shadow Blessing",
+      "subtitle": "Name • Bless • Soften",
+      "description": "Meet difficult emotion as a teacher and let it loosen its grip.",
+      "steps": [
+        "Name the feeling softly: “You are not my enemy.”",
+        "Whisper: “You shaped me. I bless your teaching. You may soften.”",
+        "Exhale slowly; visualize the shadow dissolving like mist."
+      ],
+      "tags": [
+        "shadow",
+        "healing",
+        "integration"
+      ],
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
+    },
+    {
+      "id": "r-whispering-flame",
+      "title": "The Whispering Flame",
+      "subtitle": "Name • Hold • Allow",
+      "description": "A compassionate witnessing ritual when a feeling wants space to be.",
+      "steps": [
+        "Light or imagine a small flame and say: “This feeling has a name. I do not fear it.”",
+        "Whisper: “You may be here.” Let the flame mirror the feeling without fixing.",
+        "Close with one steady breath and a gentle nod to your own courage."
+      ],
+      "tags": [
+        "emotion",
+        "witness",
+        "compassion"
+      ],
+      "updated_at": "2025-08-10T11:17:12.150604-04:00"
     }
   ],
   "sequences": [
@@ -40,7 +191,110 @@
         "Spinal wave + soft twists.",
         "Three grounding breaths, feet heavy."
       ],
-      "tags": ["movement", "restore"]
+      "tags": [
+        "movement",
+        "restore"
+      ]
+    },
+    {
+      "id": "s-firstlight-extended-12",
+      "title": "First Light Extended (12 min)",
+      "subtitle": "Wake • Align • Begin with Ease",
+      "description": "A gentle morning flow that adds movement and gratitude to the core First Light Spiral.",
+      "steps": [
+        "Three slow breaths (in 4 • hold 2 • out 6).",
+        "Name today's intent in one sentence.",
+        "Neck + shoulder loosen (1 min): circles, gentle rolls.",
+        "Standing spiral reach (2 min): inhale arms wide, exhale hug-in; slow circles.",
+        "Grounding stance (2 min): feet heavy, knees soft; three breaths down to the feet.",
+        "Tiny task initiation (3 min): choose one 3-minute act that signals the day has begun.",
+        "Close with gratitude (1 min): whisper one thing you're thankful for."
+      ],
+      "tags": [
+        "morning",
+        "opening",
+        "movement",
+        "gratitude"
+      ]
+    },
+    {
+      "id": "s-nightfall-unwind-12",
+      "title": "Nightfall Unwind (12 min)",
+      "subtitle": "Release • Soften • Prepare for Rest",
+      "description": "A closing sequence to shift the nervous system toward sleep using light movement and breath.",
+      "steps": [
+        "Dim lights and silence notifications.",
+        "Three slow breaths (in 4 • hold 2 • out 6).",
+        "Seated twist (2 min): inhale lengthen, exhale twist left/right.",
+        "Forward fold (2 min): hinge at hips; soften neck and jaw.",
+        "Lying knee rocks (2 min): windshield-wiper knees side to side.",
+        "4–7–8 breath (2 min): inhale 4, hold 7, exhale 8 for 4 rounds.",
+        "Close: whisper one thing you release; rest your hands on heart or belly."
+      ],
+      "tags": [
+        "evening",
+        "rest",
+        "nervous-system",
+        "sleep"
+      ]
+    },
+    {
+      "id": "s-ground-to-desk-5",
+      "title": "Ground-to-Desk Reset (5 min)",
+      "subtitle": "Center • Focus • Return to Work",
+      "description": "A quick reset between meetings to restore presence and reduce cognitive scatter.",
+      "steps": [
+        "Stand up, feel your feet; one slow inhale and audible exhale.",
+        "Shoulder rolls (30 sec) + jaw softening (10 sec).",
+        "Box breath (1 min): inhale 4 • hold 4 • exhale 4 • hold 4.",
+        "Vision reset (1 min): look far → mid → near, blinking softly.",
+        "Name the next single outcome: speak it; sit and begin."
+      ],
+      "tags": [
+        "workday",
+        "focus",
+        "micro",
+        "reset"
+      ]
+    },
+    {
+      "id": "s-breath-ladder-6",
+      "title": "Breath Ladder (6 min)",
+      "subtitle": "Calm • Clarity • Gentle Expansion",
+      "description": "A paced breathing sequence that gradually lengthens the exhale to calm the system.",
+      "steps": [
+        "1 min: 4–2–4 (inhale 4, hold 2, exhale 4).",
+        "1 min: 4–2–6.",
+        "1 min: 4–2–7.",
+        "1 min: 4–2–8.",
+        "1 min: natural breathing, notice the quiet.",
+        "1 min: set a micro-intent and begin."
+      ],
+      "tags": [
+        "breath",
+        "calm",
+        "clarity"
+      ]
+    },
+    {
+      "id": "s-weekend-reset-20",
+      "title": "Weekend Reset Spiral (20 min)",
+      "subtitle": "Unwind • Realign • Renew",
+      "description": "A fuller practice for days with space — combining movement, breath, and reflection.",
+      "steps": [
+        "2 min: opening stillness, feel your weight settle.",
+        "3 min: joint spiral (ankles, knees, hips, shoulders, wrists).",
+        "4 min: standing wave—inhale arms up, exhale fold, repeat slowly.",
+        "3 min: side-body elongation with gentle bends.",
+        "4 min: seated reflection—write one page or three truths you learned this week.",
+        "4 min: close with First Light/Nightfall depending on time of day."
+      ],
+      "tags": [
+        "weekend",
+        "movement",
+        "reflection",
+        "restore"
+      ]
     }
   ],
   "resources": [
@@ -50,7 +304,10 @@
       "subtitle": "Words that place things where they belong",
       "description": "A quick reminder on speaking from center when tone feels scattered.",
       "link": "#",
-      "tags": ["language", "tone"]
+      "tags": [
+        "language",
+        "tone"
+      ]
     }
   ]
 }

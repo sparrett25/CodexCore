@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import CodexCore from './pages/CodexCore';
 import Landing from "./pages/Landing";
 
+
 import ScrollGrove from './pages/ScrollGrove';
 import ScrollDetail from "./pages/ScrollDetail.jsx";
 
@@ -26,6 +27,7 @@ function App() {
 	<Route path="/journal/:slug" element={<JournalEntry />} />
 	<Route path="/about" element={<AboutLumina />} />
 	<Route path="/ember" element={<Ember />} />
+	
     </Routes>
   );
 }
